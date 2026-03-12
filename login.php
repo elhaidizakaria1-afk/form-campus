@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && md5($password) === $user['mot_de_passe']) {
+        if ($user && password_verify($password, $user['mot_de_passe'])) {
             $_SESSION['user_id']   = $user['id'];
             $_SESSION['user_nom']  = $user['prenom'] . ' ' . $user['nom'];
             $_SESSION['user_role'] = $user['role'];
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="form-group">
                     <label>Adresse email</label>
                     <input type="email" name="email" placeholder="exemple@email.com" required
-                           value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
+                            value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
                 </div>
                 <div class="form-group">
                     <label>Mot de passe</label>

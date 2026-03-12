@@ -15,5 +15,13 @@
         </div>
     </div>
 </footer>
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.querySelector('nav');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    nav.classList.toggle('open');
+  });
+</script>
 </body>
 </html>
