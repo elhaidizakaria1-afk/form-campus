@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,10 @@
 <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
 <header>
     <div class="container">
-        <a href="index.php" class="logo">🎓 <span class="span1">Form</span>'Campus</a>
-        <nav>
+<a href="index.php" class="logo">
+    <i class="fa-solid fa-graduation-cap"></i>
+    <span class="span1">Form</span>'Campus
+</a>        <nav>
             <ul>
                 <li><a href="index.php"       class="<?= $currentPage==='index.php'       ?'active':'' ?>">Accueil</a></li>
                 <li><a href="formations.php"  class="<?= $currentPage==='formations.php'  ?'active':'' ?>">Formations</a></li>
